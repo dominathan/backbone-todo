@@ -27,7 +27,7 @@ app.AppView= Backbone.View.extend({
   },
 
   render: function(){
-    var completed = app.Todos.compeleted().length
+    var completed = app.Todos.completed().length
     var remaining = app.Todos.remaining().length
 
     if (app.Todos.length ) {
@@ -41,7 +41,7 @@ app.AppView= Backbone.View.extend({
 
       this.$('#filters li a')
         .removeClass('selected')
-        .filter('[href="#/' + (app.TodoFilter || '') + '"[')
+        .filter('[href="#/' + (app.TodoFilter || '') + '"]')
         .addClass('selected');
     } else {
       this.$main.hide();
@@ -81,7 +81,7 @@ app.AppView= Backbone.View.extend({
       return;
     }
     app.Todos.create(this.newAttributes() );
-    this$input.val('');
+    this.$input.val('');
   },
 
   clearCompleted: function() {

@@ -26,4 +26,4 @@ var TodoList = Backbone.Collection.extend({
   }
 });
 
-app.Todos = new Todolist();
+app.Todos = new TodoList();
